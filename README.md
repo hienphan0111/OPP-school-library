@@ -85,6 +85,11 @@ Example command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
+- Add Person, Student, and Teacher classes.
+- Use the "Decorator" design pattern.
+- Add basic UI.
+- Preserve data.
+- Unit tests
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
