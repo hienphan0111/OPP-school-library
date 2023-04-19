@@ -1,14 +1,14 @@
 class Classroom
   attr_accessor :label
-  attr_reader :student
+  attr_reader :students
 
   def initialize(label)
     @label = label
-    @student = []
+    @students = []
   end
 
   def sutdent=(student)
-    @student << student
+    @students << student
     student.classroom = self unless student.classroom.include?(self)
   end
 end
