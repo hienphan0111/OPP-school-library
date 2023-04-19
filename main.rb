@@ -28,6 +28,6 @@ puts rent1.book.title
 puts rent2.person.name
 puts(the_power_of_brain.rental.map { |rental| rental.person.name })
 
-thomas.add_rental('2022-04-09', why_were_we_poor);
+thomas.add_rental('2022-04-09', why_were_we_poor)
 
 puts(thomas.rental.map { |rental| rental.book.title })
