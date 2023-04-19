@@ -20,8 +20,8 @@ st2.classroom = class1
 puts st1.classroom.label
 puts class1.student.count
 
-rt1 = Rental.new('2023-03-10', the_power_of_brain, mike)
-rt1 = Rental.new('2023-04-15', the_power_of_brain, thomas)
+rent1 = Rental.new('2023-03-10', the_power_of_brain, mike)
+rent2 = Rental.new('2023-04-15', the_power_of_brain, thomas)
 
-puts rt1.book.title
-puts the_power_of_brain.rental.map{ |rental| rental.person.name }
+puts rent1.book.title
+puts (the_power_of_brain.rental.map { |rental| rental.person.name })
