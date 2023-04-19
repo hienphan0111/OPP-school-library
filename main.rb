@@ -24,4 +24,5 @@ rent1 = Rental.new('2023-03-10', the_power_of_brain, mike)
 rent2 = Rental.new('2023-04-15', the_power_of_brain, thomas)
 
 puts rent1.book.title
-puts (the_power_of_brain.rental.map { |rental| rental.person.name })
+puts rent2.person.name
+puts(the_power_of_brain.rental.map { |rental| rental.person.name })
