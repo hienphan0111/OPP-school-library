@@ -129,7 +129,7 @@ class App
     id = gets.chomp.to_i
     person = @people.find { |per| per.id == id }
     person&.rental&.each do |rental|
-      puts "Date: #{date}, Book \"#{rental.book.title} by #{rental.book.author}\""
+      puts "Date: #{rental.date}, Book \"#{rental.book.title} by #{rental.book.author}\""
     end
   end
 end
