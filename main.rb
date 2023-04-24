@@ -8,6 +8,7 @@ class Main
     app.show_command
     key = gets.chomp
     app.run(key)
+    puts 'You enter invalid key, please try again' unless ('1'..'7').include?(key)
   end
   puts 'Thank you for using this app!'
 end
