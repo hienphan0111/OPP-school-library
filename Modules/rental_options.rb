@@ -28,7 +28,7 @@ class RentalOptions
     puts 'Rental created successfully'
   end
 
-  def list_all_rentals
+  def list_rentals
     puts 'Select a person from the following list by id '
     @people_options.people_list.each_with_index do |person, index|
       puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"

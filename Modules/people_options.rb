@@ -1,4 +1,4 @@
-require_relative '../Entities/person'
+require_relative '../Components/person'
 require_relative '../Entities/student'
 require_relative '../Entities/teacher'
 
@@ -40,9 +40,7 @@ class PeopleOptions
     name = gets.chomp
     print 'Has parent permission? [Y/N]: '
     parent_permission = gets.chomp.downcase == 'y'
-    print 'Classroom: '
-    classroom = gets.chomp.to_i
-    @people_list.push(Student.new(age, classroom, name, parent_permission: parent_permission))
+    @people_list.push(Student.new(age, name, parent_permission: parent_permission))
     puts "\nPerson created successfuly"
   end
 
