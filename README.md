@@ -78,6 +78,18 @@ Example command:
 - Twitter: [Twister](https://twitter.com/hienphan0111)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/hien-phan-61097b256/)
 
+👤 **Menekam Rudy**
+
+- GitHub: [Github](https://github.com/Rudy-Menekam)
+- Twitter: [Twister](https://twitter.com/rudy-menekam)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/menekam-rudy/)
+
+👤 **Hana Sabih**
+
+- GitHub: [Github](https://github.com/HanaSabih)
+- Twitter: [Twister](https://twitter.com/HanaSabih)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/HanaSabih/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
