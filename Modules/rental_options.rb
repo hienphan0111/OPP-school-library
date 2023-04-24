@@ -1,4 +1,5 @@
 require_relative '../Components/rental'
+require_relative 'input'
 
 class RentalOptions
   attr_accessor :rentals_list
@@ -9,31 +10,28 @@ class RentalOptions
     @people_options = people_options
   end
 
-  def create_rental
-    puts 'Select a book from the following list by number'
-    @book_options.books_list.each_with_index do |book, index|
-      puts "#{index}) Title: '#{book.title}', Author: #{book.author}"
+  def select(label, option)
+    puts label
+    case option
+    when 'book'
+      @book_options.list_all_books
+    when 'person'
+      @people_options.list_all_people
     end
-    book_num = gets.chomp.to_i
-    puts
-    puts 'Select a person from the following list by number (not id)'
-    @people_options.people_list.each_with_index do |person, index|
-      puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-    end
-    person_num = gets.chomp.to_i
+    gets.chomp.to_i
+  end
 
-    print 'Date: '
-    date = gets.chomp
+  def create_rental
+    book_num = select('Select a book from the following list by number', 'book')
+    person_num = select('Select a book from the following list by number', 'person')
+
+    date = Input.user_input('Date: ')
     @rentals_list.push(Rental.new(date, @book_options.books_list[book_num], @people_options.people_list[person_num]))
     puts 'Rental created successfully'
   end
 
   def list_rentals
-    puts 'Select a person from the following list by id '
-    @people_options.people_list.each_with_index do |person, index|
-      puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-    end
-    id = gets.chomp.to_i
+    id = select('Select a person from the following list by id ', 'person')
 
     puts 'Rentals:'
     @rentals_list.each do |rental|

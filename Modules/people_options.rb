@@ -1,6 +1,7 @@
 require_relative '../Components/person'
 require_relative '../Entities/student'
 require_relative '../Entities/teacher'
+require_relative 'input'
 
 class PeopleOptions
   attr_accessor :people_list
@@ -14,15 +15,14 @@ class PeopleOptions
       puts 'No record found! Add a person...'
     else
       puts 'All people in the library'
-      @people_list.each do |person|
-        puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      @people_list.each_with_index do |person, index|
+        puts "[#{index}][#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
       end
     end
   end
 
   def create_person
-    print 'Do you want to create a student(1) or a teacher(2)? [Input the number] '
-    person_role = gets.chomp
+    person_role = Input.user_input('Do you want to create a student(1) or a teacher(2)? [Input the number] ')
     case person_role
     when '1'
       create_student
@@ -34,23 +34,17 @@ class PeopleOptions
   end
 
   def create_student
-    print 'Age: '
-    age = gets.chomp.to_i
-    print 'Name: '
-    name = gets.chomp
-    print 'Has parent permission? [Y/N]: '
-    parent_permission = gets.chomp.downcase == 'y'
+    age = Input.user_input('Age: ').to_i
+    name = Input.user_input('Name: ')
+    parent_permission = Input.user_input('Has parent permission? [Y/N]: ') == 'y'
     @people_list.push(Student.new(age, name, parent_permission: parent_permission))
     puts "\nPerson created successfuly"
   end
 
   def create_teacher
-    print 'Age: '
-    age = gets.chomp
-    print 'Name: '
-    name = gets.chomp
-    print 'Specialization: '
-    specialization = gets.chomp
+    age = Input.user_input('Age: ').to_i
+    name = Input.user_input('Name: ')
+    specialization = Input.user_input('Specialization: ')
     @people_list.push(Teacher.new(age, specialization, name))
     puts "\nPerson created successfuly"
   end
