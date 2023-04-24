@@ -78,11 +78,11 @@ Example command:
 - Twitter: [Twister](https://twitter.com/hienphan0111)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/hien-phan-61097b256/)
 
-👤 **Menekam Rudy**
+👤 **Rudy Menekam**
 
-- GitHub: [Github](https://github.com/Rudy-Menekam)
-- Twitter: [Twister](https://twitter.com/rudy-menekam)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/menekam-rudy/)
+- GitHub: [@githubhandle](https://github.com/Rudy-Menekam)
+- Twitter: [@twitterhandle](https://twitter.com/MenekamR)
+- LinkedIn: [linkedIn](https://www.linkedin.com/in/menekam-rudy/)
 
 👤 **Hana Sabih**
 
