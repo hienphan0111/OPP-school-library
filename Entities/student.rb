@@ -1,4 +1,4 @@
-require_relative 'person'
+require_relative '../Components/person'
 
 class Student < Person
   attr_reader :classroom
