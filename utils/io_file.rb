@@ -19,28 +19,3 @@ class IOFile
     @file.close
   end
 end
-
-
-# require 'json'
-
-# path = File.expand_path('data/books.json')
-
-# file = File.open(path)
-
-# books = JSON.parse(file.read)
-
-# file.close
-
-# file = File.open(path, 'w')
-
-# aut = "John"
-# tit = "when time is over"
-
-# book = { "title" => tit, "author" => aut}
-
-# books << book
-
-# file.puts(JSON.generate(books))
-
-# #puts books
-# file.close
