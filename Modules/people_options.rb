@@ -2,12 +2,16 @@ require_relative '../Components/person'
 require_relative '../Entities/student'
 require_relative '../Entities/teacher'
 require_relative 'input'
+require_relative '../utils/io_file'
 
 class PeopleOptions
   attr_accessor :people_list
 
   def initialize
     @people_list = []
+    @people_file = IOFile.new('./data/rentals.json')
+    @people_data = @people_file.read_data
+    @people_list = @people_data.map { |data| People.new(data['id'], data['name'], data['age']) }
   end
 
   def list_all_people
