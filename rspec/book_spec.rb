@@ -1,18 +1,36 @@
-require_relative '../Components/book'
+require_relative 'helper_spec'
 
-class Test
-  def sum(a, b)
-    a + b
+describe Book do
+
+  before :each do
+    @book = Book.new('Title', 'Author')
+    @person1 = Person.new(20, 'Harry')
   end
 
-end
-
-describle Test do
-  context 'When testing the Test class' do
-    it 'should be 3 when we call the sum(1,2) method' do
-      ts = Test.new
-      s = ts.sum(1, 2)
-      expect(s).to eq 3
+  describe "#new" do
+    it "return a new book object" do
+      @book.should be_an_instance_of Book
     end
+  end
+
+  describe "#title" do
+    it "returns the correct title" do
+      @book.title.should eql "Title"
+    end
+  end
+
+  describe "#author" do
+    it "returns the correct title" do
+      @book.author.should eql "Author"
+    end
+  end
+
+  it "adds new rental for this book" do
+    @book.add_rental('2023-03-15', @person1)
+    @book.rental[0].date.should eql '2023-03-15'
+  end
+
+  it "adds new rental for this book" do
+    lambda { @book.add_rental('2023-03-15') }.should raise_exception ArgumentError
   end
 end
