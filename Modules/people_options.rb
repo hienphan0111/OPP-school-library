@@ -9,9 +9,8 @@ class PeopleOptions
 
   def initialize
     @people_list = []
-    @people_file = IOFile.new('./data/rentals.json')
-    @people_data = @people_file.read_data
-    @people_list = @people_data.map { |data| People.new(data['id'], data['name'], data['age']) }
+    @people_file = IOFile.new('./data/people.json')
+    @people_list = @people_file.read_data
   end
 
   def list_all_people
@@ -42,8 +41,7 @@ class PeopleOptions
     name = Input.user_input('Name: ')
     parent_permission = Input.user_input('Has parent permission? [Y/N]: ') == 'y'
     @people_list.push(Student.new(age, name, parent_permission: parent_permission))
-    @people_data << { 'age' => age, 'name' => name, 'parent_permission' => parent_permission }
-    @people_file.write_data(@people_data)
+    @people_file.write_data(@people_list)
     puts "\nPerson created successfuly"
   end
 
@@ -52,8 +50,7 @@ class PeopleOptions
     name = Input.user_input('Name: ')
     specialization = Input.user_input('Specialization: ')
     @people_list.push(Teacher.new(age, specialization, name))
-    @people_data << { 'age' => age, 'specialization' => specialization, 'name' => name }
-    @people_file.write_data(@people_data)
+    @people_file.write_data(@people_list)
     puts "\nPerson created successfuly"
   end
 end

@@ -7,8 +7,7 @@ class BookOptions
 
   def initialize
     @books_file = IOFile.new('./data/books.json')
-    @book_data = @books_file.read_data
-    @books_list = @book_data.map { |data| Book.new(data['title'], data['author']) }
+    @books_list = @books_file.read_data
   end
 
   def list_all_books
@@ -24,8 +23,7 @@ class BookOptions
     title = Input.user_input('Title: ')
     author = Input.user_input('Author: ')
     @books_list.push(Book.new(title, author))
-    @book_data << { 'title' => title, 'author' => author }
-    @books_file.write_data(@book_data)
+    @books_file.write_data(@books_list)
     puts 'Book created successfully'
   end
 end

@@ -1,16 +1,1 @@
-[{
-    "date": "25-04-2023",
-    "book": "How to build a cool project",
-    "person": "Paul"
-},
-{
-    "date": "26-04-2023",
-    "book": "HLife is hard",
-    "person": "Mark"
-},
-{
-    "date": "27-04-2023",
-    "book": "when time is over",
-    "person": "John"
-}
-]
+{"json_class":"Rental","a":["424234",{"json_class":"Book","a":["sdfasdf","afsfsf"]},{"json_class":"Teacher","a":[34,"sgdfgdfg","sdfasdf"]}]}

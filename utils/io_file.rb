@@ -5,17 +5,20 @@ class IOFile
 
   def initialize(file_name)
     @path = File.expand_path(file_name)
-    @file = File.exist?(@path) ? File.open(@path) : File.new(file_name, 'r')
   end
 
   def read_data
-    data = @file.read
-    JSON.parse(data)
+    return [] unless File.exist?(@path)
+
+    data = File.read(@path)
+    json = data.split
+    json.map { |item| JSON.parse(item, create_additions: true) }
   end
 
   def write_data(data)
-    @file.open(@path, 'w')
-    @file.puts(JSON.generate(data))
-    @file.close
+    file = File.open(@path, 'w')
+    json = data.map { |item| JSON.generate(item) }
+    file.puts(json)
+    file.close
   end
 end

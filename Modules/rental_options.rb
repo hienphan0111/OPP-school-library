@@ -9,8 +9,7 @@ class RentalOptions
     @book_options = book_options
     @people_options = people_options
     @rental_file = IOFile.new('./data/rentals.json')
-    @rental_data = @rental_file.read_data
-    @rentals_list = @rental_data.map { |data| Rental.new(data['date'], data['book'], data['person']) }
+    @rentals_list = @rental_file.read_data
   end
 
   def select(label, option)
@@ -30,9 +29,7 @@ class RentalOptions
 
     date = Input.user_input('Date: ')
     @rentals_list.push(Rental.new(date, @book_options.books_list[book_num], @people_options.people_list[person_num]))
-    @rental_data << { 'date' => date, 'book' => @book_options.books_list[book_num],
-                      'person' => @people_options.people_list[person_num] }
-    @rental_file.write_data(@rental_data)
+    @rental_file.write_data(@rentals_list)
     puts 'Rental created successfully'
   end
 

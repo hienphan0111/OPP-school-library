@@ -1,1 +1,2 @@
-[{"json_class":"Student","name":"Dan","age":15,"classroom":null,"parent_permission":{"parent_permission":{"parent_permission":{"parent_permission":{"parent_permission":false}}}}},{"json_class":"Teacher","name":"Bob","age":45,"specialization":"Biology"},{"json_class":"Student","name":"Candy","age":17,"classroom":null,"parent_permission":{"parent_permission":{"parent_permission":{"parent_permission":false}}}}]
+{"json_class":"Student","a":[23,"sdfasdf",{"parent_permission":true}]}
+{"json_class":"Teacher","a":[34,"sgdfgdfg","sdfasdf"]}
