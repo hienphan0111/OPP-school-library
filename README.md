@@ -39,7 +39,10 @@ Ruby
 
 ### Key Features <a name="key-features"></a>
 
-
+- Add Person, Student, and Teacher classes.
+- Use the "Decorator" design pattern.
+- Add basic UI.
+- Preserve data.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -49,22 +52,42 @@ Ruby
 
 To get a local copy up and running, follow these steps.
 
-### Prerequisites
 
-In order to run this project you need:
-- Ruby installer
+## Install
 
-<!--
-Example command:
+### Clone the repository
 
-```sh
- gem install rails
+```shell
+git clone https://github.com/hienphan0111/OPP-school-library.git
+cd OPP-school-library
 ```
- -->
+### Check your Ruby version
 
-### Setup
+```shell
+ruby -v
+```
 
+The ouput should start with something like `ruby 3.2.2`
 
+If not, install the right ruby version using [rbenv](https://github.com/rbenv/rbenv) (it could take a while):
+
+```shell
+rbenv install 3.2.2
+```
+
+### Install dependencies
+
+Using [Bundler](https://github.com/bundler/bundler) and [Yarn](https://github.com/yarnpkg/yarn):
+
+```shell
+bundle && yarn
+```
+
+### run program demo
+
+```shell
+ruby main.rb
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -97,10 +120,6 @@ Example command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Add Person, Student, and Teacher classes.
-- Use the "Decorator" design pattern.
-- Add basic UI.
-- Preserve data.
 - Unit tests
 
 
