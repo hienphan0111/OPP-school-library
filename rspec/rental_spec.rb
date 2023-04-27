@@ -1,8 +1,8 @@
-require_relative 'spec_helper'
+require_relative 'helper_spec'
 
 describe Rental do
   before :each do
-    @rentals = Rental.new('2020/02/02', Teacher.new('Math', 30), Book.new('Title', 'Author'))
+    @rentals = Rental.new('2020/02/02', Book.new('Title', 'Author'), Teacher.new(30, 'Math', 'German'))
   end
 
   describe '#new' do

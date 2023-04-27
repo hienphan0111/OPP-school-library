@@ -8,7 +8,7 @@ describe Person do
   end
 
   describe "#new" do
-    it "return a new book object" do
+    it "return a new Person object" do
       @person1.should be_an_instance_of Person
     end
   end
@@ -30,7 +30,7 @@ describe Person do
     @person1.rental[0].date.should eql '2023-03-15'
   end
 
-  it "adds new rental for this book" do
+  it "raise an error when we give wrong argument of method" do
     lambda { @person1.add_rental('2023-03-15') }.should raise_exception ArgumentError
   end
 end

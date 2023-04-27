@@ -7,8 +7,8 @@ class Classroom
     @students = []
   end
 
-  def sutdent=(student)
-    @students << student
-    student.classroom = self unless student.classroom.include?(self)
+  def student=(student)
+    @students << student unless @students.include?(student)
+    student.classroom = self
   end
 end

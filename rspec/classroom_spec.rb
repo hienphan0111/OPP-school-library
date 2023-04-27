@@ -1,44 +1,48 @@
-require_relative 'spec_helper'
+require_relative 'helper_spec'
 
 describe Classroom do
-  class_name = 'Frontend'
+
+  before :each do
+    @student1 = Student.new(25, 'Maximilianus', true)
+    @student2 = Student.new(13, 'Zeus', false)
+    @student3 = Student.new(19, 'Poseidon', true)
+    @class1 = Classroom.new('Frontend')
+  end
+
   context 'Classroom should be created' do
-    classroom = Classroom.new(class_name)
     it 'Created classroom should be an instance of the Classroom' do
-      expect(classroom).to be_an_instance_of Classroom
+      expect(@class1).to be_an_instance_of Classroom
     end
   end
 
   context 'When passed in a classname' do
-    classroom = Classroom.new(class_name)
     it 'Label should match the argument' do
-      expect(classroom.label).to eq class_name
+      expect(@class1.label).to eq 'Frontend'
     end
   end
 
   context 'When students are added to the classroom' do
-    classroom = Classroom.new(class_name)
-    student1 = Student.new(classroom, 25, 'Maximilianus', true)
-    student2 = Student.new(classroom, 13, 'Zeus', false)
-    student3 = Student.new(classroom, 19, 'Poseidon', true)
+    
     it 'Student count should be zero(0) on initialization' do
-      expect(classroom.students.length).to eq 0
+      expect(@class1.students.length).to eq 0
     end
 
     it 'Addition of student should be possible' do
-      classroom.add_student(student1)
-      expect(classroom.students.length).to eq 1
+      @class1.student = @student1
+      expect(@class1.students.length).to eq 1
     end
 
     it 'Should not permit duplicate addition' do
-      classroom.add_student(student1)
-      expect(classroom.students.length).to eq 1
+      @class1.student = @student1
+      @class1.student = @student1
+      expect(@class1.students.length).to eq 1
     end
 
     it 'Should permit addition multiple different students' do
-      classroom.add_student(student2)
-      classroom.add_student(student3)
-      expect(classroom.students.length).to eq 3
+      @class1.student = @student1
+      @class1.student = @student2
+      @class1.student = @student3
+      expect(@class1.students.length).to eq 3
     end
   end
 end
