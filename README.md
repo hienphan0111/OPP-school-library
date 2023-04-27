@@ -98,7 +98,6 @@ To run all Rspec test files in a directory
 ```shell
 rspec spec/rspec
 ```
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
