@@ -5,6 +5,7 @@ describe Person do
   before :each do
     @book = Book.new('Title', 'Author')
     @person1 = Person.new(20, 'Harry')
+    @person2 = Person.new(14, 'Lamra')
   end
 
   describe "#new" do
@@ -22,6 +23,19 @@ describe Person do
   describe "#age" do
     it "returns the correct age" do
       @person1.age.should eql 20
+    end
+  end
+
+  describe "#can_use_services" do
+    it "returns the true for person1" do
+      @person1.can_use_services?.should be true
+    end
+  end
+
+  describe "#can_use_services" do
+    it "returns the false for person2" do
+      @person2.parent_permission = false
+      @person2.can_use_services?.should be false
     end
   end
 
