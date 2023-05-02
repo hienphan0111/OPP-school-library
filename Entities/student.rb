@@ -1,4 +1,5 @@
 require_relative '../Components/person'
+require_relative '../Components/classroom'
 require 'json'
 
 class Student < Person
